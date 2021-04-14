@@ -9,7 +9,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -300,6 +299,9 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.1.vendor \
     librmnetctl \
     libxml2
+
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlay
 
 PRODUCT_PACKAGES += \
     libnetutils.vendor \
