@@ -169,6 +169,10 @@ vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 
+# Gatekeeper - from FP3-REL-6.A.028.1-gms-fb581341-user
+vendor/lib/hw/gatekeeper.msm8953.so
+vendor/lib64/hw/gatekeeper.msm8953.so
+
 # GPS - from daisy
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
@@ -277,6 +281,10 @@ usr/keylayout/gpio-keys.kl:vendor/usr/keylayout/gpio-keys.kl
 usr/keylayout/synaptics_dsx_v21.kl:vendor/usr/keylayout/synaptics_dsx_v21.kl
 usr/keylayout/uinput-fpc.kl:vendor/usr/keylayout/uinput-fpc.kl
 usr/keylayout/uinput-goodix.kl:vendor/usr/keylayout/gf3208.kl
+
+# Keystore - from FP3-REL-6.A.028.1-gms-fb581341-user
+vendor/lib/hw/keystore.msm8953.so
+vendor/lib64/hw/keystore.msm8953.so
 
 # Listen - from FP3-REL-6.A.028.1-gms-fb581341-user
 vendor/lib/libadpcmdec.so
