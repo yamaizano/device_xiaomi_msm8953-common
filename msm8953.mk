@@ -69,7 +69,8 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.primary.msm8953 \
     audio.r_submix.default \
-    audio.usb.default
+    audio.usb.default \
+    sound_trigger.primary.msm8953
 
 PRODUCT_PACKAGES += \
     libaudiopreprocessing \
@@ -81,6 +82,12 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libvolumelistener \
     libtinycompress
+
+# Audio features
+PRODUCT_PACKAGES += \
+    libhfp \
+    libsndmonitor \
+    libspkrprot
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -133,7 +140,8 @@ PRODUCT_PACKAGES += \
     memtrack.msm8953
 
 PRODUCT_PACKAGES += \
-    libdisplayconfig \
+    vendor.display.config@1.0.vendor \
+    vendor.display.config@2.0.vendor \
     libqdMetaData.system \
     libtinyxml
 
@@ -144,7 +152,7 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
-    android.hardware.drm@1.4.vendor
+    android.hardware.drm-V1-ndk.vendor
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -244,6 +252,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw \
     libstagefright_softomx_plugin.vendor
+
+# Minijail
+PRODUCT_PACKAGES += \
+    libavservices_minijail.vendor
 
 # Network
 PRODUCT_PACKAGES += \
@@ -347,10 +359,10 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full.so \
     prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v33.so
 
 PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-vendorcompat:64 \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
 
 # Vibrator
