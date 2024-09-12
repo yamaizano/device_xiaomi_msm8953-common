@@ -55,7 +55,7 @@ PRODUCT_PACKAGES += \
 
 # Device-specific Settings
 PRODUCT_PACKAGES += \
-    XiaomiParts
+    XiaomiDoze
 
 # Audio
 PRODUCT_PACKAGES += \

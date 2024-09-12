@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2015-2016 The CyanogenMod Project
-                   2017-2018 The LineageOS Project
+                   2017 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,13 +16,12 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="org.lineageos.settings"
+    package="org.lineageos.settings.doze"
+    android:sharedUserId="android.uid.system"
     android:versionCode="1"
-    android:versionName="1.0"
-    android:sharedUserId="android.uid.system">
+    android:versionName="1.0">
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
@@ -31,28 +30,22 @@
         android:label="@string/device_settings_app_name"
         android:persistent="true">
 
-        <receiver
-            android:name=".BootCompletedReceiver"
-            android:exported="false">
-            <intent-filter android:priority="1000">
+        <receiver android:name=".BootCompletedReceiver"
+                  android:exported="false">
+            <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
-        <provider
-            android:name="androidx.startup.InitializationProvider"
-            android:authorities="${applicationId}.androidx-startup"
-            tools:replace="android:authorities"/>
-
         <service
-            android:name=".doze.DozeService"
-            android:exported="true"
-            android:permission="XiaomiDozeService">
+            android:name=".DozeService"
+            android:permission="XiaomiDozeService"
+            android:exported="true">
         </service>
 
         <activity
-            android:name=".doze.DozeSettingsActivity"
+            android:name=".DozeSettingsActivity"
             android:exported="false"
             android:label="@string/ambient_display_title"
             android:theme="@style/Theme.SubSettingsBase">
