@@ -329,6 +329,6 @@
         <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
     </string-array>
 
-    <!-- rounded_corner -->
-    <dimen name="rounded_corner_radius">52px</dimen>
+    <!-- Corner radius of system dialogs -->
+    <dimen name="config_dialogCornerRadius">4dp</dimen>
 </resources>
